@@ -1,0 +1,176 @@
+@import 'reset';
+@import 'mixins';
+@import 'highlight';
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100%;
+  min-width: 100%;
+  font-size: 14px; 
+  .flexbox;
+}
+
+#input {
+  background: #f1f1f1;
+  color: rgba(0, 0, 0, 0.5);
+  width: 45%;
+  position: relative;
+  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.2);
+  .flex(1);
+
+  textarea {
+    background: transparent;
+    color: #54465F;
+    font: 400 14px/1.5 Menlo, Monaco, Consolas, monospace;
+    border: 0;
+    resize: none;
+    padding: 3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  :focus {
+    outline: none;
+  }
+}
+
+#output {
+  background: #fff;
+  color: #222;
+  font-family: 'Merriweather', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  width: 55%;
+
+  article {
+    padding: 3em;
+    margin: 0 auto;
+    max-width: 35em;
+
+    h1 {
+      text-align: center;
+      font-size: 1.4em; 
+      font-weight: 700;
+      margin: 2em 0 1em;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 1.2em;
+      margin: 1em 0;
+    }
+
+    h3 {
+      font-weight: 400;
+      font-size: 1.2em;
+      margin: 1em 0;
+    }
+
+    h4 {
+      font-weight: 300;
+      font-size: 1.2em;
+      margin: 1em 0;
+    }
+
+    h5 {
+      font-weight: 700;
+      font-size: 1em;
+      margin: 1em 0;
+    }
+
+    h6 {
+      font-weight: 400;
+      font-size: .8em;
+      margin: 1em 0;
+      text-align: center
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.4em;
+      color: #333;
+      text-align: justify;
+      margin: 1em 0;
+      word-wrap: break-word;
+    }
+
+    blockquote {
+      font-weight: 300;
+      font-size: 1em;
+      font-style: italic;
+      border-left: 2px solid #999;
+      padding: 0 1em;
+      margin: 1em 0;
+    }
+
+    code {
+      font-family: Menlo, Monaco, Consolas, monospace;
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    em {
+      font-weight: 700;
+    }
+
+    strong {
+      font-weight: 900;
+    }
+
+    a, a:visited {
+      text-decoration: none;
+      font-weight: 700;
+      color: #ED7124;
+    }
+
+    a:hover {
+      color: #F59E26;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 2em;
+      line-height: 1.2em;
+    }
+
+    ol {
+      list-style-type: decimal;
+      padding-left: 2em;
+      line-height: 1.2em;
+    }
+
+    table {
+      margin: 1em 0;
+
+      tr {
+        border: 1px solid;
+
+        th {
+          font-weight: 700;
+          padding: .5em 1em;
+          border: 1px solid;
+        }
+
+        td {
+          padding: .5em 1em;
+          border: 1px solid;
+        }
+      }
+
+      tbody {
+        tr:nth-child(odd) {
+          background: #eee;
+        }
+      }
+    }
+  }
+}

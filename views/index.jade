@@ -1,0 +1,20 @@
+extends layout
+
+block head
+  link(href='//fonts.googleapis.com/css?family=Merriweather:400,700,300,900', rel='stylesheet')
+  link(href='/css/main.css', rel='stylesheet')
+block content
+  section#input
+    textarea.markdown
+  section#output
+    article
+
+  script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.10/backbone-min.js')
+  script(src='js/marked/marked.js')
+  script(src='js/whitman/document.js')
+  script(src='js/whitman/document-input-view.js')
+  script(src='js/whitman/document-output-view.js')
+  script(src='js/whitman.js')
