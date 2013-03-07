@@ -6,11 +6,18 @@
   display: flex;
  }
 
-
- .flex(@number) {
+.flex(@number) {
   -webkit-box-flex: @number;
   -moz-box-flex: @number;
   -webkit-flex: @number;
   -ms-flex: @number;
   flex: @number;
- }
+}
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
