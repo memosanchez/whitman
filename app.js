@@ -37,10 +37,6 @@ app.configure('production', function(){
   app.use(express.logger());
 });
 
-app.get('/', function(req, res) {
-  res.render('index', { title: 'Whitman' });
-});
-
 var default_body = [
   '### A Clear Midnight.',
   '',
@@ -53,6 +49,10 @@ var default_body = [
   '[![Walt Whitman](http://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Walt_Whitman_signature.svg/160px-Walt_Whitman_signature.svg.png)](//wikipedia.org/wiki/Walt_Whitman)'
 ].join('\n');
 
+app.get('/', function(req, res) {
+  res.render('index', { title: 'Whitman' });
+});
+
 app.get('/document', function(req, res) {
   if (req.session.document === undefined)
     req.session.document = { title: 'A Clear Midnight', body: default_body }
@@ -64,6 +64,16 @@ app.post('/document', function(req, res) {
   req.session.document = req.body;
   req.session.cookie.expires = new Date(Date.now() + 2592000000);
   res.send(200);
+});
+
+app.get('/download', function(req, res) {
+  if (req.session.document === undefined)
+    res.redirect('/');
+  else {
+    var filename = req.session.document['title'] + '.md';
+    res.set('Content-Disposition', 'attachment; filename="' + filename + '"');
+    res.send(req.session.document['body']);
+  }
 });
 
 http.createServer(app).listen(app.get('port'), function(){

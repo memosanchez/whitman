@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'mixins';
 @import 'highlight';
+@import 'webfonts/ss-standard.less';
 
 html {
   height: 100%;
@@ -8,168 +9,94 @@ html {
 }
 
 body {
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+
+  nav {
+    ul {
+      li {
+        display: inline-block;
+
+        a, span {
+          color: #FFF;
+          background: #31353f;
+          padding: 10px;
+          display: inline-block;
+          line-height: 1.2;
+          font-size: 10px;
+          vertical-align: middle;
+        }
+
+        span {
+          font-family: 'Merriweather';
+        }
+
+        a:hover, a:focus {
+          background: #242730;
+        }
+      }
+
+      li:first-child a {
+        border-radius: 0 0 0 6px;
+      }
+
+      li:last-child a {
+        border-radius: 0 0 6px 0;
+      }
+    }
+  }
+}
+
+.container {
   min-height: 100%;
   min-width: 100%;
-  font-size: 14px; 
   .flexbox;
 }
 
 #input {
-  background: #e8e8e8;
-  color: rgba(0, 0, 0, 0.5);
   width: 50%;
   position: relative;
+  background: #ECF0F1;
   .flex(1);
 
   textarea {
+    font: 400 12px/1.5 'Andale Mono', Monaco, Consolas, monospace;
     background: transparent;
-    color: #40403f;
-    font: 400 12px/1.5 'Andale Mono', Menlo, Monaco, Consolas, monospace;
-    border: 0;
     resize: none;
-    padding: 3em;
+    border: 0;
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
     right: 0;
     bottom: 0;
-  }
-
-  :focus {
-    outline: none;
+    padding: 3em;
   }
 }
 
 #output {
-  background: #f1f1f1;
-  color: #1b2a31;
-  font-family: 'Merriweather', Helvetica, Arial, sans-serif;
-  font-weight: 400;
   width: 50%;
+  background: #FFF;
 
   article {
+    font: 400 14px/1.6 'Merriweather', Helvetica, Arial, sans-serif;
     padding: 3em;
     margin: 0 auto;
     max-width: 35em;
 
-    h1 {
-      text-align: center;
-      font-size: 1.4em; 
-      font-weight: 700;
-      margin-bottom: 1em;
-    }
-
-    h2 {
-      font-weight: 700;
-      font-size: 1.2em;
-      margin: 1em 0;
-    }
-
-    h3 {
-      font-weight: 400;
-      font-size: 1.2em;
-      margin: 1em 0;
-    }
-
-    h4 {
-      font-weight: 300;
-      font-size: 1.2em;
-      margin: 1em 0;
-    }
-
-    h5 {
-      font-weight: 700;
-      font-size: 1em;
-      margin: 1em 0;
-    }
-
-    h6 {
-      font-weight: 400;
-      font-size: .8em;
-      margin: 1em 0;
-      text-align: center
-    }
-
-    p {
-      font-size: 1em;
-      line-height: 1.4em;
-      color: #333;
-      text-align: justify;
-      margin: 1em 0;
-      word-wrap: break-word;
-    }
-
-    blockquote {
-      font-weight: 300;
-      font-size: 1em;
-      font-style: italic;
-      border-left: 2px solid #999;
-      padding: 0 1em;
-      margin: 1em 0;
-    }
-
-    code {
-      font-family: 'Andale Mono', Menlo, Monaco, Consolas, monospace;
-      line-height: 1.5;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    em {
-      font-weight: 700;
-    }
-
-    strong {
-      font-weight: 900;
-    }
-
-    a, a:visited {
-      text-decoration: none;
-      font-weight: 700;
-      color: #556cc1;
-    }
-
-    a:hover {
-      color: #6581e5;
-    }
-
-    ul {
-      list-style-type: disc;
-      padding-left: 2em;
-      line-height: 1.2em;
-    }
-
-    ol {
-      list-style-type: decimal;
-      padding-left: 2em;
-      line-height: 1.2em;
-    }
-
-    table {
-      margin: 1em 0;
-
-      tr {
-        border: 1px solid;
-
-        th {
-          font-weight: 700;
-          padding: .5em 1em;
-          border: 1px solid;
-        }
-
-        td {
-          padding: .5em 1em;
-          border: 1px solid;
-        }
-      }
-
-      tbody {
-        tr:nth-child(odd) {
-          background: #eee;
-        }
-      }
-    }
+    @import 'markdown';
   }
+}
+
+:focus {
+  outline: none;
 }

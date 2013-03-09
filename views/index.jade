@@ -2,12 +2,23 @@ extends layout
 
 block head
   link(href='//fonts.googleapis.com/css?family=Merriweather:400,700,300,900', rel='stylesheet')
-  link(href='/css/main.css', rel='stylesheet')
+  link(href='/css/test.css', rel='stylesheet')
+
 block content
-  section#input
-    textarea.markdown
-  section#output
-    article
+  header
+    nav
+      ul 
+        li
+          a.ss-icon(href='#') info
+        li
+          span whitman.md
+        li
+          a.ss-icon(href='/download') download
+  .container
+    #input
+      textarea.markdown
+    #output
+      article
 
   script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
   script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js')
