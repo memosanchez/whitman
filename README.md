@@ -8,6 +8,9 @@ Built using:
    * [backbone.js](http://backbonejs.org/)
    * [marked.js](https://github.com/chjj/marked)
 
+## Demo
+http://whitman.herokuapp.com/
+
 ## Notes
 The active markdown docment is saved to the user's session. You can easily introduce more permanent storage by fleshing out the `GET` and `POST` handlers for the /document route.
 
