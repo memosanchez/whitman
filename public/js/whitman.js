@@ -7,7 +7,18 @@
     },
 
     initialize: function() {
+      this.initializeMarked();
       this.set('document', new Document());
+    },
+
+    initializeMarked: function() {
+      marked.setOptions({
+        breaks: true,
+        smartLists: true,
+        highlight: function(code) {
+          return hljs.highlightAuto(code).value;
+        }
+      });
     }
   });
 
